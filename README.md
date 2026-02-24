@@ -1,4 +1,4 @@
-# credit_card_fraud_detection
+# Credit Card Fraud Detection (Kredi Kartı Sahtekarlığı Tespiti)
 Kredi kartı sahtekarlığı tespiti için makine öğrenmesi projesi.
 
 # Kredi Kartı Sahtekarlığı Tespiti (Credit Card Fraud Detection)
@@ -39,3 +39,4 @@ Veri setindeki uç değerlerin tespiti ve RobustScaler kullanımı öncesi anali
 ### 4. Modelin Karar Mekanizması
 Eğitilen modelin en çok dikkat ettiği özellikler:
 ![Özellik Önemi](images/feature_importance.png)
+
