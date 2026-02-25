@@ -1,42 +1,45 @@
-# Credit Card Fraud Detection (Kredi Kartı Sahtekarlığı Tespiti)
-Kredi kartı sahtekarlığı tespiti için makine öğrenmesi projesi.
+# Credit Card Fraud Detection 
+A machine learning project designed to identify fraudulent credit card transactions.
 
-# Kredi Kartı Sahtekarlığı Tespiti (Credit Card Fraud Detection)
+#Project Overview
 
-Bu proje, makine öğrenmesi algoritmaları kullanarak kredi kartı işlemlerindeki sahtekarlık durumlarını tespit etmeyi amaçlamaktadır. 
+This project aims to detect fraudulent activities in credit card transactions using various machine learning algorithms.
 **[Kaggle: Credit Card Fraud Detection Dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud/data)**
 
-## Veri Seti Hakkında
+## About the Dataset
 
-Projede kullanılan veri seti, Avrupa'daki kart sahipleri tarafından yapılan kredi kartı işlemlerini içermektedir. Veri setiyle ilgili temel özellikler şunlardır:
+The dataset contains transactions made by credit cards in September 2013 by European cardholders. Key characteristics of the dataset include:
 
-* **Aşırı Dengesiz Yapı:** Veri setinde yasal işlemlerin sayısı, sahte işlemlerin sayısından çok daha fazladır. Sahtekarlık vakaları tüm verinin çok küçük bir yüzdesini oluşturur.
-* **PCA Dönüşümü:** Müşteri gizliliğini korumak amacıyla veri setindeki özelliklerin büyük bir kısmı (V1'den V28'e kadar olan sütunlar) PCA ile dönüştürülmüştür. 
-* **Orijinal Değişkenler:** Sadece `Time` ve `Amount` değişkenleri orijinal haliyle bırakılmıştır. Aşırı değerler içerdiği için `Amount` değişkeni modellemeye girmeden önce `RobustScaler` ile ölçeklendirilmiştir.
+* **Highly Imbalanced Structure:** The number of legitimate transactions significantly outweighs the number of fraudulent ones. Fraud cases represent a very small percentage of the total data.
+* **PCA Transformation:** To protect customer privacy, most features (columns V1 through V28) have been transformed using Principal Component Analysis (PCA).
+* **Original Variables:** Only the `Time` and `Amount` features remain in their original form. Since the `Amount` variable contains extreme outliers, it was scaled using `RobustScaler` before modeling.
+
 
 ## Kullanılan Algoritmalar
 
-Verideki aşırı sınıf dengesizliğiyle başa çıkmak ve en doğru tahminleri yapabilmek için aşağıdaki makine öğrenmesi algoritmaları kullanılmıştır:
+## Algorithms & Methodology
+To handle the extreme class imbalance and achieve high predictive accuracy, the following machine learning algorithms were implemented:
 
 * **Logistic Regression**
 * **Random Forest Classifier**
 * **XGBoost**
 
-Modeller **Accuracy** yerine sınıf dengesizliğine daha uygun olan **Precision**, **Recall** ve **F1-Score** metrikleriyle değerlendirilmiş ve XGBoost modeli üzerinde `RandomizedSearchCV` kullanılarak hiperparametre optimizasyonu yapılmıştır.
+The models were evaluated using **Precision**, **Recall**, and **F1-Score** metrics—which are more appropriate for imbalanced data than standard **Accuracy**. Additionally, hyperparameter optimization was performed on the XGBoost model using `RandomizedSearchCV`.
 
-## Proje Görselleri
+## Project Visuals
 
-### 1. Veri Seti Dengesi
+### 1. Dataset Balance
 ![Sınıf Dağılımı](images/class_distribution.png)
 
-### 2. Özellikler Arası İlişki
+### 2. Feature Correlation
 ![Korelasyon Analizi](images/correlation_heatmap.png)
 
-### 3. Aykırı Değer (Outlier) Analizi
+### 3. Outlier Analysis
 Veri setindeki uç değerlerin tespiti ve RobustScaler kullanımı öncesi analiz:
 ![Aykırı Değer Analizi](images/outlier_analysis.png)
 
-### 4. Modelin Karar Mekanizması
+### 4. Feature Importance
 Eğitilen modelin en çok dikkat ettiği özellikler:
 ![Özellik Önemi](images/feature_importance.png)
+
 
