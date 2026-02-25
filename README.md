@@ -15,8 +15,6 @@ The dataset contains transactions made by credit cards in September 2013 by Euro
 * **Original Variables:** Only the `Time` and `Amount` features remain in their original form. Since the `Amount` variable contains extreme outliers, it was scaled using `RobustScaler` before modeling.
 
 
-## Kullanılan Algoritmalar
-
 ## Algorithms & Methodology
 To handle the extreme class imbalance and achieve high predictive accuracy, the following machine learning algorithms were implemented:
 
@@ -41,5 +39,6 @@ Veri setindeki uç değerlerin tespiti ve RobustScaler kullanımı öncesi anali
 ### 4. Feature Importance
 Eğitilen modelin en çok dikkat ettiği özellikler:
 ![Özellik Önemi](images/feature_importance.png)
+
 
 
